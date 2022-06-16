@@ -1,0 +1,132 @@
+# Kotlin Syntax
+
+- Programa (Program) - Sequencia de instruções (statements) executadas sequencialmente de maneira ordenada
+- Declação (Statement) - comando único a ser executado
+- Expressão (Expression) - parte do código que produz um valor único como resultado (p.ex. 2*2)
+- Bloco (BlocK) - grupo de zero ou mais declarações emoldurados por chaves {} (o programa consiste em um bloco único)
+- Palavra reservada (Keyword) - palavra com significado especial na linguagem
+- Identificador (identifier/name) - identificador de objetos escritos pelo programador
+- Comentário (comment) - parte do código após // que será ignorada na execução
+- Espaço ("Whitespace") - área em branco ou linha nova, utilizada para melhorar leitura
+
+====
+fun main (){} - entry point do programa Kotlin
+====
+
+## Tipos de data
+
+Número
+Byte, Short, Int, Long, Float, Double
+//Pode ser escrito 1_000_000
+//val.MAX_VALUE e val.MIN_VALUE
+//val.SIZE_BYTES e val.SIZE_BITES
+
+Caracteres
+Char
+//'C'
+
+Texto
+String
+//"String"
+
+Booleano
+Boolean
+//true ou false
+
+## Variáveis
+
+var nomeVariavel: Tipo = valor (variável mutável)
+val nomeVariavel: Tipo = valor (value - variável imutável)
+
+//Statically-determined - TIPOS não são mutáveis, se não especificados na declaração, o programa infere o tipo
+//Val deve ser inicializada em algum momento do código, seja na declaração ou na execução
+//Val pode ter seu estado interno mudado, porém não o objeto à qual se refere
+
+const val NOME_VARIAVEL = valor
+
+//declarada fora de qualquer função, constante para todo o código
+
+
+## Output padrão
+
+print(parametro)// uso \n para quebra de linha
+println() //quebra de linha após impressão; pode não ter parâmetro e daí imprimir linha vazia
+
+## Input padrão
+
+readln()
+readLine()!! //!! - Null Safety
+
+import java.util.Scanner ou java.util.* //declaração antes da função main para importar da biblioteca do Java
+val scanner = Scanner(System.'in')
+scanner.next() // lê o próximo objeto da linha
+scanner.nextInt() // lê o próximo Int da linha
+scanner.nextLine() // lê a linha inteira como uma string
+
+## Funções
+
+//Funções nativas ou declaradas
+
+fun nomeDaFuncao(argumento1, argumento2){
+return
+}
+
+// Todas as funções retornam um resultado, ou um valor utilizável ou um valor especial chamado Unit (kotlin.Unit)
+
+## Conversão de tipos
+
+.toInt()
+.toLong()
+.toDouble()
+.toString()
+.toChar()
+.toCode()
+.toByte()
+.toShort()
+.toFloat()//converter para Int antes
+.toDouble()//converter para Int antes
+.toBoolean()//números não podem ser convertidos
+
+//cuidado com conversão de valores de tipos maiores para menores, pois pode haver type overflow (-24), ou seja, o valor está acima do máximo permitido
+
+## Strings
+
+string.length
+
+"str1" + "str2" = "str2str2"
+"str1" + num1 =  "str1num1"
+"str1" + 'c' = "str1c"
+'c' + "str1" = "cstr1"
+num1 + "str1" = ERROR
+
+str.repeat(num)// repetição
+
+\ -> serve para criar exceções e suspender a impressão numa string
+println("A expressão \"Hello World\" é muito comum entre programadores")
+
+Raw String - """ """ - copia o texto exato, permitindo exceções naturalmente
+//.trimIndent() no final para cortar primeira e ultima linhas vazias
+
+## Booleanos
+
+//string "true" (case insensitive) retornam true, o resto retorna false
+
+toBooleanStrict()//"true" retorna true, "false" retorna false, o resto retorna erro
+toBooleanStrictOrNull()//"true" retorna true, "false" retorna false, o resto retorna Null
+
+Opradores
+
+NOT - !
+AND - && //retorna true se ambos são true
+OR - || //retorna true se um dos dois é true
+XOR - xor //retorna true se um e apenas um é true
+NOR - !(a || b) ou !a && !b//retorna true se os dois são falsos
+
+## Objetos
+
+Estados
+Propriedades //obj.property
+Métodos ou Funções membro //obj.funcao()
+
+//Objetos podem ser mutáveis ou mutáveis, diferentes variáveis podem fazer referência ao mesmo objeto, criando cópias dele no programa
+
