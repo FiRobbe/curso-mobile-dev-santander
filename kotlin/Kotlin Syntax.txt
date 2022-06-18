@@ -221,3 +221,35 @@ lista[lista.size-1] //para o último elemento
 lista.first()
 lista.last()
 lista.lastIndex //Kotlin arrasa muito
+
+## String template
+
+Para adicionar variáveis dentor da "String"
+$variavel
+${expressão}
+
+## Condicionais
+
+if (condicao) {
+code
+return // opcional
+} else if (condicao2) {
+code
+} else {
+code
+}
+
+val variavel = if (condicao) retorno1 else retorno 2 //versão reduzida, para retornos com 1 argumento
+
+## Repetições
+
+repeat(n) { code }
+//n pode ser lido com readln()
+
+while (condicao) {
+codigo
+} //pré-teste - código é realizado somente se o primeiro teste é true
+
+do {
+codigo
+} while (condicao) // pós-teste - código é realizado uma vez e repetido se o teste resulta true
